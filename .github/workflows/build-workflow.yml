@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup node.jc
+      - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
