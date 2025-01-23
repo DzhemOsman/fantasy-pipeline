@@ -5,7 +5,7 @@ on:
     workflows:
       - Test the Frontend
     types:
-      - success
+      - completed
   
 jobs:
   build-and-push:
