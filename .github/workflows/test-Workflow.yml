@@ -5,7 +5,7 @@ on:
     workflows:
       - Build the Project
     types:
-      - success
+      - completed
 
 jobs:  
   test_frontend:
