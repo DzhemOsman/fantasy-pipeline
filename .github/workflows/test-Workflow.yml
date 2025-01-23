@@ -1,9 +1,11 @@
 name: Test the Frontend
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows:
+      - Build the Project
+    types:
+      - success
 
 jobs:  
   test_frontend:
