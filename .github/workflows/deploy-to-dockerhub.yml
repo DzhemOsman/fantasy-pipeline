@@ -1,10 +1,12 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main # Der Workflow wird bei Pushes auf den main-Branch ausgelöst
-
+  workflow_run:
+    workflows:
+      - Test the Frontend
+    types:
+      - success
+  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -24,7 +26,7 @@ jobs:
       # Build des Docker-Images
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/fantasy-pipeline:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/fantasy-pipeline:latest
 
       # Push des Docker-Images
       - name: Push Docker Image to DockerHub
